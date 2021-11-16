@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Login() {
   return (
     <div className="conteiner">
@@ -11,6 +13,7 @@ function Login() {
           <input type="password" placeholder="Digite sua senha" required />
         </div>
         <button className="button-env" type="submit">Enviar</button>
+        <Link className="nav-link-NewUse" to="/NewUse">Novo cadastro</Link>
       </form>
     </div>
   );

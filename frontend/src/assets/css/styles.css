@@ -20,6 +20,9 @@ header{
     height: 105px;
     background: rgb(70, 69, 69);
 }
+.pArticle { 
+    text-align: justify;
+}
 #root {
     display: flex;
     flex-direction: column;
@@ -50,6 +53,9 @@ header{
 }
 .nav-link{
     color:white;
+}
+.nav-link-NewUse{
+    color:#000;
 }
 .space{
     padding-left: 2px;

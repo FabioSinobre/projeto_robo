@@ -1,4 +1,3 @@
-import Login from "components/Login";
 import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import NewUse from "components/NewUse";
@@ -12,7 +11,7 @@ const page = () => {
                 </div>
             </div>
             <div className="conteiner">
-                <Login />
+                <NewUse />
             </div>
             <div className="conteiner">
                 <div>
