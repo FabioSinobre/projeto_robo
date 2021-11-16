@@ -11,11 +11,11 @@ export default function MainRotes() {
     return (
         <Routes>
                 <Route path="/"  element={<Home/>} />
-                <Route path="/Control" element={<Control/>} />
-                <Route path="/Login" element={<Login/>} />
                 <Route path="/WhoWeAre" element={<WhoWeAre/>} />
+                <Route path="/Login" element={<Login/>} />
+                <Route path="/Control" element={<Control/>} />
 
-                <Route path="*" element={<h1>Not found</h1>} />
+                <Route path="*" element={<h1>Página não encontrada!</h1>} />
         </Routes>
     );
 }
