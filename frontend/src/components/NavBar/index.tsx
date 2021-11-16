@@ -10,13 +10,13 @@ function NavBar() {
                 <Link className="nav-link active" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/quemSomos">Quem somos</Link>
+                <Link className="nav-link" to="/WhoWeAre">Quem somos</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/login">Login</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/controle">Robô</Link>
+                <Link className="nav-link" to="/control">Robô</Link>
               </li>
             </ul>
           </header>

@@ -20,6 +20,9 @@ header{
     height: 105px;
     background: rgb(70, 69, 69);
 }
+.pArticle { 
+    text-align: justify;
+}
 #root {
     display: flex;
     flex-direction: column;

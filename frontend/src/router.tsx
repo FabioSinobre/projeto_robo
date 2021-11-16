@@ -15,7 +15,7 @@ export default function MainRotes() {
                 <Route path="/Login" element={<Login/>} />
                 <Route path="/WhoWeAre" element={<WhoWeAre/>} />
 
-                <Route path="*" element={<h1>Not found</h1>} />
+                <Route path="*" element={<h1>Página não Encontrada</h1>} />
         </Routes>
     );
 }
