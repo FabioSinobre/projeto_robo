@@ -1,6 +1,7 @@
 import fabio from 'assets/fotos/foto_fabio.jpeg';
 import gleici from 'assets/fotos/foto_gleici.jpeg';
 import raquel from 'assets/fotos/foto_raquel.jpeg';
+import katia from 'assets/fotos/foto_katia.jpg';
 function Section() {
   return (
     <div className="conteiner">
@@ -52,13 +53,13 @@ function Section() {
       <div className="card mb-3 ml-5 card-studens-outside">
         <div className="row no-gutters card card-studens">
           <div className="col-md-1">
-            <img src={fabio} className="card-img rounded-circle m-2 mt-0 pt-0" alt="Fabio D.Sinobre" />
+            <img src={katia} className="card-img rounded-circle m-2 mt-0 pt-0" alt="Fabio D.Sinobre" />
           </div>
           <div className="col-md-11 ">
             <div className="card-body text-primary">
-              <h5 className="card-title"><b>Fábio D. Sinobre</b></h5>
-              <p className="card-text">Natural de Guarulhos SP, gosto de aprender coisas novas, amante de tecnologia meu principal “hobby” é astronomia amadora fiz curso no IAG de astronomia amadora e sempre que posso participo de eventos da área como ENAST.</p>
-              <p className="card-text">Estudei até o quinto semestre no IF-SP no curso de licenciatura em física, em 2018 iniciei o curso de bacharel em engenharia da computação na UNIVESP</p>
+              <h5 className="card-title"><b>Katia Ferreira de Sousa Ribeiro</b></h5>
+              <p className="card-text">Natural de São Miguel SP, Sou estudante de Engenharia da Computação, apaixonada por tecnologia.</p>
+              <p className="card-text">Nas horas vagas gosto de viajar, sair com minha família e aprender coisas novas.</p>
               <p className="card-text text-center"><small className="text-primary">Guarulhos, 20 de Outubro de 2021</small></p>
             </div>
           </div>
