@@ -1,20 +1,20 @@
 function NewUse() {
   return (
     <div className="conteiner">
-      <fieldset>
+      <fieldset className=" form-login">
         <legend>Crie seu cadastro aqui!</legend>
-        <form className="row g-3">
+        <form className="row g-6">
           <div className="col-md-5">
             <label className="form-label">E-mail</label>
-            <input type="email" className="form-control" id="inputEmail4" placeholder="Digite seu e-mail" />
+            <input type="email" className="form-control" id="inputEmail4" placeholder="Digite seu e-mail" required/>
           </div>
           <div className="col-md-5">
             <label className="form-label">Senha</label>
-            <input type="password" className="form-control" id="inputPassword4" placeholder="Digite uma senha"/>
+            <input type="password" className="form-control" id="inputPassword4" placeholder="Digite uma senha" required/>
           </div>
           <div className="col-10">
             <label className="form-label">Nome</label>
-            <input type="text" className="form-control" id="inputName" placeholder="Digite seu nome" />
+            <input type="text" className="form-control" id="inputName" placeholder="Digite seu nome" required />
           </div>
 
           <div className="col-md-6">

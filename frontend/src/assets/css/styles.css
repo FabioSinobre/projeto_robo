@@ -65,14 +65,15 @@ header{
 }
 /*Formulário de cadastro*/
 .form-login{
-    max-width: 28%;  
-    margin: 5px 20px;  
+    max-width: 60%;  
+    margin: auto;  
     position: relative;
-    left: 74%;
+   
 }
 label{
-    margin: 10px;
-    margin-top: 0px;
+    padding-top: 5vw;
+    margin-top: 10px;
+    
 }
 input{
     font-size: x-small;
@@ -82,9 +83,7 @@ button{
     margin-top: 0px;
 }
 .button-env{
-    padding: 8px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+
     border-radius: 0px 25px 0px 20px;
     border-color: #778899;
     background-color: #000;
