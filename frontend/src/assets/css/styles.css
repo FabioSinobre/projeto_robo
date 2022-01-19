@@ -54,6 +54,9 @@ header{
 .nav-link{
     color:white;
 }
+.nav-link:hover{
+    transition: 1.5s ease-in;
+}
 .nav-link-NewUse{
     color:#000;
 }
@@ -77,18 +80,6 @@ label{
 }
 input{
     font-size: x-small;
-}
-button{
-    margin: 10px;
-    margin-top: 0px;
-}
-.button-env{
-
-    border-radius: 0px 25px 0px 20px;
-    border-color: #778899;
-    background-color: #000;
-    color: aliceblue;
-    opacity: 25%;
 }
 /*auterações no perfio dos alunos*/
 .card-studens-outside{
@@ -126,17 +117,14 @@ label{
 input{
     font-size: x-small;
 }
-button{
-    margin: 20px;
-    margin-top: 0px;
-}
 .button-env{
-    padding: 8px;
-    padding-top: 3px;
-    padding-bottom: 3px;
     border-radius: 0px 25px 0px 20px;
-    border-color: #778899;
-    background-color: #000;
+    border-color: #086ed4;
+    background-color:cornflowerblue;
     color: aliceblue;
-    opacity: 25%;
+}
+.button-env:hover{
+    border-color: #000;
+    color:#000;
+    transition: 2s ease-in-out;
 }
