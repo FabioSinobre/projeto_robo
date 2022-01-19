@@ -16,7 +16,7 @@ function NavBar() {
               <Link className="nav-link" to="/Login">Login</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Control">Robô</Link>
+              <Link className="nav-link" to="/novousuario">Cadastrar</Link>
             </li>
           </ul>
         </header>

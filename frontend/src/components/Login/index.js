@@ -2,23 +2,33 @@ import React, { useState } from 'react';
 import firebase from 'config/firebase';
 import 'firebase/compat/app';
 import 'firebase/compat/auth';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import './login.css';
+import {useSelector, useDispatch} from 'react-redux';
 
 function Login() {
   const[email, setEmail] = useState();
   const[password, setPassword] = useState();
   const[msgType, setMsgType] = useState();
+  const dispatch =  useDispatch();
 
   function logar(){
     firebase.auth().signInWithEmailAndPassword(email, password).then(result => {
     setMsgType('success');
+    dispatch({type: 'LOG_IN', userEmail: email});
     }).catch(erro =>{
       setMsgType('erro');
     });
+    
   }
+  
   return (
     <div className="login-content d-flex aling-center">
+
+      {
+        useSelector(state => state.userLogged) > 0 ?
+        <Navigate to='/' /> : null
+      }
       <form className="mx-auto text-center">
         <h1 className="h3 mb-3 fw-normal wf-bold">Logar</h1>
         <input onChange={(e) => setEmail(e.target.value) } type="email" className="form-control my-3" id="floatingInput" placeholder="Digite seu e-mail" required />
