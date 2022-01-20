@@ -1,5 +1,5 @@
 import Login from "components/Login/index";
-import NavBar from "components/NavBar";
+import NavBar from "components/NavBar/index";
 import Footer from "components/Footer";
 
 const page = () => {
