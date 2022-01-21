@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+
+import { useSelector } from 'react-redux';
+
 import firebase from 'config/firebase';
 import 'firebase/compat/auth';
 import 'firebase/compat/app';
@@ -6,22 +9,33 @@ import 'firebase/compat/app';
 import './newUse.css';
 
 function NewUse() {
+  const [name, setName] = useState();
+  const [locale, setLocale] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [msg, setMsg] = useState();
   const [msgType, setMsgType] = useState();
   const [load, setLoad] = useState();
 
+  const db = firebase.firestore();
+
   function register() {
     setLoad(1);
     setMsgType(null);
 
-    if (!email || !password) {
+    if (!name || !email || !password || !locale) {
       setMsgType('erro')
       setMsg('Você precisa informar um email e senha valida!')
       return;
     }
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(result => {
+    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+      db.collection('registers').add({
+        name: name,
+        email: email,
+        password: password,
+        locale: locale,
+      })
+    }).then(result => {
       setLoad(0);
       setMsgType('success')
     }).catch(erro => {
@@ -43,15 +57,18 @@ function NewUse() {
       }
     })
   }
+
+
+
   return (
     <div className="login-content d-flex aling-center">
       <form className="mx-auto text-center">
         <h1 className="h3 mb-3 fw-normal wf-bold">Cadastro</h1>
-        <input type="text" className="form-control my-3" placeholder="Digite seu nome" required />
-        <input onChange={(e) => setEmail(e.target.value)} type="email" className="form-control my-3" placeholder="Digite seu e-mail" required />
-        <input onChange={(e) => setPassword(e.target.value)} type="password" className="form-control my-3" placeholder="Digite uma senha" required />
+        <input onChange={(e) => setName(e.target.value)} type="text" value={name && name} className="form-control my-3" placeholder="Digite seu nome" required />
+        <input onChange={(e) => setEmail(e.target.value)} type="email" value={email && email} className="form-control my-3" placeholder="Digite seu e-mail" required />
+        <input onChange={(e) => setPassword(e.target.value)} type="password" value={password && password} className="form-control my-3" placeholder="Digite uma senha" required />
         <div className="col-md-15">
-          <select className="form-control my-3">
+          <select onChange={(e) => setLocale(e.target.value)} value={locale && locale} className="form-control my-3">
             <option disabled selected>-- Escolha uma Estado --</option>
             <option>AC</option>
             <option>AL</option>
@@ -82,12 +99,12 @@ function NewUse() {
           </select>
         </div>
         {
-          load ? 
-          <button class="btn btn-warning" type="button" disabled>
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Loading...
-          </button>
-          : <button onClick={register} type="button" className="button-env btn btn-lg my-2">Enviar</button>
+          load ?
+            <button class="btn btn-warning" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+            : <button onClick={register} type="button" className="button-env btn btn-lg my-2">Enviar</button>
         }
         <div className='msg-login text-center my-3'>
           {msgType === 'success' && <span className='text-success'><strong>Wow! </strong>Usuário cadastrado com sucesso! &#128526; </span>}
